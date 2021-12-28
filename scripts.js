@@ -7,6 +7,14 @@ let gridSizeMult = Math.pow(
   2
 );
 
+function colorChanger() {
+  let colorSelection = document.querySelector("#draw-color").value;
+  let root = document.documentElement.style.setProperty(
+    "--hover-color",
+    colorSelection
+  );
+}
+
 function createGrid(size) {
   gridSizeSelected =
     400 / parseInt(gridSize.options[gridSize.selectedIndex].text);
@@ -24,6 +32,7 @@ function hovering() {
   grids.forEach((grid) => {
     grid.addEventListener("mouseenter", () => {
       grid.classList.add("hover");
+      colorChanger();
     });
   });
 }
@@ -46,8 +55,13 @@ function start() {
 }
 
 function reset() {
-  gridSizeMult = Math.pow(parseInt(gridSize.options[0].text), 2);
+  gridSizeMult = Math.pow(
+    parseInt(gridSize.options[gridSize.selectedIndex].text),
+    2
+  );
   removeGrid();
   createGrid(gridSizeMult);
   hovering();
 }
+
+start();

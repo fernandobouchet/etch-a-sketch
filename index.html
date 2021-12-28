@@ -14,18 +14,21 @@
     <h1>Etch-A-Sketch!</h1>
     <div id="main-board">
         <div id="options">
-            <h2>Options</h2>
-            <h3>Grid Size:</h3>
-            <select name="" id="grid-size">
-                <option value="first">24</option>
-                <option value="first">32</option>
-                <option value="first">64</option>
-                <option value="first">100</option>
+            <h2>Grid options</h2>
+            <h3>Size:</h3>
+            <select name="" onclick="start()" id="grid-size">
+                <option value="8">8 x 8</option>
+                <option>16 x 16</option>
+                <option>24 x 24</option>
+                <option>32 x 32</option>
+                <option>40 x 40</option>
+                <option>48 x 48</option>
+                <option>56 x 56</option>
+                <option>64 x 64</option>
             </select>
-            <h3>Color of paint:</h3>
-            <input type="color" name="color" id="draw-color">
-            <button onclick="start()">Apply</button>
-            <button onclick="reset()">Reset</button>
+            <h3>Draw color:</h3>
+            <input type="color" name="color" onclick="start()" id="draw-color">
+            <button onclick="reset()">Clear</button>
         </div>
         <div class="container"></div>
     </div>
