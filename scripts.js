@@ -1,14 +1,19 @@
 const gridContainer = document.querySelector(".container");
 const gridSize = document.querySelector("#grid-size");
+let gridSizeSelected =
+  400 / parseInt(gridSize.options[gridSize.selectedIndex].text);
 let gridSizeMult = Math.pow(
   parseInt(gridSize.options[gridSize.selectedIndex].text),
   2
 );
 
 function createGrid(size) {
+  gridSizeSelected =
+    400 / parseInt(gridSize.options[gridSize.selectedIndex].text);
   while (size > 0) {
     const grid = document.createElement("div");
     grid.className = "grid";
+    grid.style.cssText = `width: ${gridSizeSelected}px; height: ${gridSizeSelected}px`;
     gridContainer.appendChild(grid);
     size--;
   }
