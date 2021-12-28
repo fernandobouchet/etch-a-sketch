@@ -1,0 +1,34 @@
+body {
+  background-color: cornflowerblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#main-board {
+  display: flex;
+  gap: 10px;
+}
+
+#options {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(100, 1fr);
+  grid-template-rows: repeat(100, 1fr);
+  width: 500px;
+  height: 500px;
+}
+
+.grid {
+  background-color: white;
+  width: 5px;
+  height: 5px;
+}
+
+.hover {
+  background-color: red;
+}

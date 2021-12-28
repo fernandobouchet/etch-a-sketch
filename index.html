@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-A-Sketch!</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="/scripts.js" defer></script>
+</head>
+
+<body>
+    <h1>Etch-A-Sketch!</h1>
+    <div id="main-board">
+        <div id="options">
+            <h2>Options</h2>
+            <h3>Grid Size:</h3>
+            <select name="" id="grid-size">
+                <option value="first">24</option>
+                <option value="first">32</option>
+                <option value="first">64</option>
+                <option value="first">100</option>
+            </select>
+            <h3>Color of grids:</h3>
+            <input type="color" name="color" id="grid-color">
+            <h3>Color of paint:</h3>
+            <input type="color" name="color" id="draw-color">
+            <button onclick="start()">Apply</button>
+            <button onclick="reset()">Reset</button>
+        </div>
+        <div class="container"></div>
+    </div>
+</body>
+
+</html>
