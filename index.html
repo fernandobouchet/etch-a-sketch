@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-A-Sketch!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="/scripts.js" defer></script>
 </head>
@@ -14,21 +17,13 @@
     <h1>Etch-A-Sketch!</h1>
     <div id="main-board">
         <div id="options">
-            <h2>Grid options</h2>
+            <h2>Grid options:</h2>
             <h3>Size:</h3>
-            <select name="" onclick="start()" id="grid-size">
-                <option value="8">8 x 8</option>
-                <option>16 x 16</option>
-                <option>24 x 24</option>
-                <option>32 x 32</option>
-                <option>40 x 40</option>
-                <option>48 x 48</option>
-                <option>56 x 56</option>
-                <option>64 x 64</option>
-            </select>
+            <p id="size-show"></p>
+            <input type="range" name="" id="grid-size" value="8" min="8" max="64" step="8" onclick="reset()">
             <h3>Draw color:</h3>
-            <input type="color" name="color" onclick="start()" id="draw-color">
-            <button onclick="reset()">Clear</button>
+            <input type="color" name="color" onclick="reset()" id="draw-color">
+            <button id="clear-button" onclick="reset()">Clear</button>
         </div>
         <div class="container"></div>
     </div>

@@ -1,11 +1,7 @@
 const gridContainer = document.querySelector(".container");
 const gridSize = document.querySelector("#grid-size");
-let gridSizeSelected =
-  400 / parseInt(gridSize.options[gridSize.selectedIndex].text);
-let gridSizeMult = Math.pow(
-  parseInt(gridSize.options[gridSize.selectedIndex].text),
-  2
-);
+let gridSizeSelected = 400 / parseInt(gridSize.value);
+let gridSizeMult = Math.pow(parseInt(gridSize.value), 2);
 
 function colorChanger() {
   let colorSelection = document.querySelector("#draw-color").value;
@@ -15,9 +11,17 @@ function colorChanger() {
   );
 }
 
+function getValues() {
+  let val = gridSize.value;
+  return `${val} x ${val}`;
+}
+
+function updateShowValues(value) {
+  document.getElementById("size-show").textContent = value;
+}
+
 function createGrid(size) {
-  gridSizeSelected =
-    400 / parseInt(gridSize.options[gridSize.selectedIndex].text);
+  gridSizeSelected = 400 / parseInt(gridSize.value);
   while (size > 0) {
     const grid = document.createElement("div");
     grid.className = "grid";
@@ -45,20 +49,15 @@ function removeGrid() {
 }
 
 function start() {
-  removeGrid();
-  gridSizeMult = Math.pow(
-    parseInt(gridSize.options[gridSize.selectedIndex].text),
-    2
-  );
+  gridSizeMult = Math.pow(parseInt(gridSize.value), 2);
+  updateShowValues(getValues());
   createGrid(gridSizeMult);
   hovering();
 }
 
 function reset() {
-  gridSizeMult = Math.pow(
-    parseInt(gridSize.options[gridSize.selectedIndex].text),
-    2
-  );
+  gridSizeMult = Math.pow(parseInt(gridSize.value), 2);
+  updateShowValues(getValues());
   removeGrid();
   createGrid(gridSizeMult);
   hovering();
